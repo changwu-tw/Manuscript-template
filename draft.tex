@@ -1,0 +1,101 @@
+%===============
+%
+% LaTeX template
+%
+%===============
+
+%------------
+% directories
+%------------
+
+\def\STYDIR{./styles}           % .sty/.cls file directory
+\def\FIGDIR{./figures}          % directory of pictures/diagrams
+\def\DATADIR{./data}            % directory of plots/data
+\def\TBLDIR{./tables}           % directory of picturejs/diagrams
+\def\SECDIR{./sections}         % directory of sections
+\def\CODEDIR{./code}            % directory of code snippets
+
+%---------------------
+% document information
+%---------------------
+
+% document type
+\documentclass{\STYDIR/sig-alternate-05-2015}       %% ACM
+%\documentclass[9pt,conference]{\STYDIR/IEEEtran}   %% IEEE
+
+\usepackage{\STYDIR/mystyles}
+\usetikzlibrary{arrows,decorations.pathmorphing,backgrounds,positioning,fit}
+\usetikzlibrary{snakes,arrows,shapes}
+\usetikzlibrary{positioning}
+\newcommand{\hilite}[1]{\textcolor{red}{#1}}
+
+\newtheorem{defi}{Definition}
+\newtheorem{theorem}{Theorem}
+
+\setlength{\parskip}{0.5pt plus 0.1pt minus 0pt} % min: 0pt
+\newlength{\figwidth}
+\setlength{\figwidth}{0.685\columnwidth} % was 0.66
+\newlength{\tallfigwidth}
+\setlength{\tallfigwidth}{0.59\columnwidth} % was 0.66
+\newlength{\shortfigwidth}
+\setlength{\shortfigwidth}{1\columnwidth}
+
+\begin{document}
+
+% Copyright
+\setcopyright{acmcopyright}
+
+% DOI
+\doi{10.475/123_4}
+
+% ISBN
+\isbn{123-4567-24-567/08/06}
+
+%Conference
+\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
+
+\acmPrice{\$15.00}
+
+\title{Alternate {\ttlit ACM} SIG Proceedings Paper in LaTeX
+Format\titlenote{(Produces the permission block, and
+copyright information). For use with
+SIG-ALTERNATE.CLS. Supported by ACM.}}
+\subtitle{[Extended Abstract]
+\titlenote{A full version of this paper is available as
+\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+\LaTeX$2_\epsilon$\ and BibTeX} at
+\texttt{www.acm.org/eaddress.htm}}}
+
+\author{
+    \alignauthor
+    Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
+           \affaddr{Institute for Clarity in Documentation}\\
+           \affaddr{1932 Wallamaloo Lane}\\
+           \affaddr{Wallamaloo, New Zealand}\\
+           \email{trovato@corporation.com}
+}
+
+\maketitle
+
+\input \SECDIR/00-abstract.tex
+\input \SECDIR/01-CCSXML.tex
+\input \SECDIR/02-introduction.tex
+\input \SECDIR/03-background.tex
+\input \SECDIR/04-problem.tex
+\input \SECDIR/05-approach
+\input \SECDIR/06-evaluation.tex
+\input \SECDIR/07-conclusions.tex
+
+%\section*{Acknowledgment}
+
+% put references in toc/bookmarks
+% \addcontentsline{toc}{section}{References}
+
+
+% \bibliographystyle{\STYDIR/IEEEtran}
+\bibliographystyle{\STYDIR/acm}
+{
+    \bibliography{bib/sigproc}
+}
+
+\end{document}

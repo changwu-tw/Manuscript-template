@@ -1,0 +1,11 @@
+*.aux
+/*.pdf
+*.log
+*.bbl
+*.blg
+*.gz
+*.swp
+*~
+*.dvi
+*.bak
+.DS_Store
